@@ -1,0 +1,6 @@
+@startuml ユースケース図
+left to right direction
+actor 経営者
+actor ホテル従業員
+ホテル従業員 <|-[dashed]- 経営者
+@enduml

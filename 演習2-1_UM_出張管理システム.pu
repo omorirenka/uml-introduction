@@ -1,0 +1,23 @@
+@startuml 演習2-1
+left to right direction
+actor 申請者 #DDDDDD;line:black;line.bold;
+actor 承認者 #DDDDDD;line:black;line.bold;
+actor 経理担当者 #DDDDDD;line:black;line.bold;
+actor 交通費生産システム as K #DDDDDD;line:black;line.bold;
+rectangle 出張申請システム {
+usecase 出張申請を登録する as T
+usecase 出張申請を提出する as T2
+usecase 出張申請を承認する as T3
+usecase 出張申請を却下する as T4
+usecase 出張申請を差し戻す as T5
+usecase 出張申請を確認する as T6
+}
+申請者--> T
+申請者--> T2
+承認者--> T3
+承認者--> T4
+承認者--> T5
+承認者--> T6
+経理担当者--> T6
+T <-- K
+@enduml

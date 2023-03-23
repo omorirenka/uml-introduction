@@ -1,0 +1,16 @@
+@startuml ユースケース図
+left to right direction
+actor 人事担当者
+actor 社員
+rectangle 従業員登録システム{
+usecase 社員情報を登録する as a
+usecase 社員情報を変更する as b
+usecase 社員情報を参照する as c
+usecase 変更届を提出する as d
+}
+人事担当者 --> a
+人事担当者 --> b
+社員 --> b
+社員 --> c 
+b ...> d : << include >>
+@enduml

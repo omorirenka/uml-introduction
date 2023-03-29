@@ -1,0 +1,19 @@
+@startuml
+left to right direction
+object "<u>車: 車クラス</u>" as k{
+車種
+}
+object "<u>前輪1: タイヤ</u>" as t1{
+}
+object "<u>前輪2: タイヤ</u>" as t2{
+}
+object "<u>後輪3: タイヤ</u>" as t3{
+}
+object "<u>後輪4: タイヤ</u>" as t4{
+}
+k -- t1
+k -- t2
+k -- t3
+k -- t4
+@enduml
+' 車にはタイヤが４本装着されている。車クラスとタイヤクラスの関係を①オブジェクト図と②クラス図で表現しなさい

@@ -1,0 +1,14 @@
+@startuml
+left to right direction
+object "<u>高橋洋平さん:社員</u>" as p1{
+}
+object "<u>樋口正之さん:社員</u>" as p2{
+}
+object "<u>情報処理安全確保支援士:資格</u>" as A{
+}
+object "<u>LinuC試験Level１:資格</u>" as B{
+}
+p1 -- A
+p2 -- A
+p1 -- B
+@enduml

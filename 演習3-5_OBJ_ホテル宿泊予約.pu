@@ -1,0 +1,21 @@
+@startuml
+left to right direction
+object "<u>Aさん:顧客</u>" as A{
+5月3日
+2泊
+}
+object "<u>Bさん:顧客</u>" as B{
+5月3日
+2泊
+}
+object "<u>301号室:部屋</u>" as r1{
+シングル
+9,000円
+}
+object "<u>302号室:部屋</u>" as r2{
+シングル
+9,000円
+}
+A -- r1
+B -- r2
+@enduml

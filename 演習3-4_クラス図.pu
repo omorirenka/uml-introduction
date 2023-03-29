@@ -1,0 +1,8 @@
+@startuml
+left to right direction
+class 車{
+- 車種
+}
+class タイヤ{}
+車 "*" o--"*" タイヤ
+@enduml

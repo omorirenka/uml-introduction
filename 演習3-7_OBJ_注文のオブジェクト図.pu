@@ -1,9 +1,6 @@
 @startuml
 left to right direction
-object "<u>重要顧客:重要顧客</u>" as d1{
-    
-}
-object "<u>顧客情報１:顧客</u>" as p1{
+object "<u>顧客情報１:重要顧客</u>" as p1{
 氏名=高橋洋平さん
 住所
 }
@@ -31,7 +28,6 @@ object "<u>注文情報３:注文</u>" as o3{
 注文日=12月23日
 数量=1台
 }
-d1 -- p1
 p1 -- o1
 p1 -- o2
 p2 -- o3

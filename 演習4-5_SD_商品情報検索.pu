@@ -2,29 +2,29 @@
 hide footbox
 Actor ":会員" as k
 participant ":商品検索画面" as screen <<boundary>>
-participant ":商品検索" as search <<control>>
+participant ":商品検索コントローラ" as search <<control>>
 participant ":商品" as product <<entity>>
 participant ":商品カテゴリ" as category <<entity>>
 
 activate k
-    k -> screen:商品情報確認()
+    k -> screen:商品検索(商品番号)
     activate screen
         activate search
-            screen -> search:検索実行
+            screen -> search:商品検索(商品番号)
             create product
             search -->> product : <<create>>生成()
 
             loop 商品カテゴリ数
                 create category
                 search -->> category : <<create>>生成()
-                search -> product:商品検索()
+                search -> product:商品カテゴリ設定()
                 activate product
                 deactivate product
             end loop
 
-            screen <-- search:検索結果取得()
+            screen <-- search:商品情報
             deactivate search
-            screen -> screen:検索結果表示()
+            screen -> screen:商品情報表示(商品情報)
             activate screen
             deactivate screen
     deactivate screen

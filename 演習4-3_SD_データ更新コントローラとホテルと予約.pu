@@ -13,4 +13,5 @@ hotel -> hotel : 予約登録()
 activate hotel
 deactivate hotel
 deactivate controller
+
 @enduml

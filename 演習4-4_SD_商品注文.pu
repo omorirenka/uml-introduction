@@ -9,17 +9,17 @@ activate orderP
     orderP -> register:注文情報確認()
     activate register
         activate product
-            register -> product:商品登録()
-            register <<-- product:商品情報取得()
+            register -> product:商品情報取得()
+            register <<-- product:商品情報
         deactivate product
-        register -> register:商品情報表示()
+        register -> register:商品情報表示(商品情報)
         activate register
         deactivate register
     deactivate register
-    orderP -> register
+    orderP -> register : 商品登録(注文情報)
     activate register
     create order
-    register --> order:<<create>>
+    register --> order:生成する<<create>>
     activate order
     deactivate order
 deactivate orderP

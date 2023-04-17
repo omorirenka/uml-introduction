@@ -1,0 +1,27 @@
+@startuml
+hide footbox
+Actor ":受注係" as orderP
+participant ":注文登録画面" as register <<boundary>>
+participant ":商品" as product <<entity>>
+participant ":注文" as order <<entity>>
+
+activate orderP
+    orderP -> register:注文情報確認()
+    activate register
+        activate product
+            register -> product:商品登録()
+            register <<-- product:商品情報取得()
+        deactivate product
+        register -> register:商品情報表示()
+        activate register
+        deactivate register
+    deactivate register
+    orderP -> register
+    activate register
+    create order
+    register --> order:<<create>>
+    activate order
+    deactivate order
+deactivate orderP
+
+@enduml

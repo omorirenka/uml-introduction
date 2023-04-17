@@ -12,9 +12,9 @@ activate floor
 floor -> cook : 調理を指示する
 activate cook
 cook -> cook : 調理をする
-floor <-- cook : ラーメン
+floor <<-- cook : ラーメン
 deactivate cook
-P <-- floor : ラーメン
+P <<-- floor : ラーメン
 deactivate floor
 deactivate P
 @enduml

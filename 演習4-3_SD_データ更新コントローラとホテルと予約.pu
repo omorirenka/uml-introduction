@@ -1,11 +1,11 @@
 @startuml
 hide footbox
-participant "controller:コントローラ" as controller
-participant "hotel:ホテル" as hotel
+participant ":データ更新コントローラ" as controller <<control>>
+participant ":ホテル" as hotel <<hotel>>
 participant ":予約" as y
 
 activate controller
-controller -> hotel : 予約()
+controller -> hotel : 予約する()
 activate hotel
 create y
 hotel -> y : <<create>>

@@ -11,7 +11,7 @@ P -> floor : ラーメンを注文する
 activate floor
 floor -> cook : 調理を指示する
 activate cook
-cook -> cook :: 調理をする
+cook -> cook : 調理をする
 floor <<-- cook : ラーメン
 deactivate cook
 P <<-- floor : ラーメン

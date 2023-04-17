@@ -9,7 +9,7 @@ controller -> hotel : 予約する()
 activate hotel
 create y
 hotel -> y : <<create>>
-hotel -> hotel :： 予約登録()
+hotel -> hotel : 予約登録()
 activate hotel
 deactivate hotel
 deactivate controller

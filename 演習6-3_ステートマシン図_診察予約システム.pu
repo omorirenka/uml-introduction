@@ -1,24 +1,19 @@
 @startuml
 left to right direction
-state メニュー{
+[*] --> メニュー
+メニュー ----> 今の順番
+state 予約と確認{
     state entry <<entryPoint>>
     state exit <<exitPoint>>
-    entry --> 予約と確認
-    entry --> 今の順番
-    予約と確認 --> exit
+    entry --> 登録
+    entry --> 確認
+    entry --> 取消
+    取消 --> exit
 }
-[*] --> entry
-state 予約と確認メニュー{
-    state entry1 <<entryPoint>>
-    state exit1 <<exitPoint>>
-    entry1 --> 登録
-    entry1 --> 確認
-    entry1 --> 取消
-    取消 --> exit1
-}
+メニュー --> entry
 確認 ---> あなたの順番
 登録 ---> あなたの順番
-exit --> entry1
+今の順番 ----> [*]
 あなたの順番 --> [*]
-exit1 ---> [*]
+exit ---> [*]
 @enduml

@@ -1,16 +1,12 @@
 @startuml
-state 部屋{
-state entry <<entryPoint>>
-state exit <<exitPoint>>
-entry -right-> 空室状態
-空室状態 --> 予約済状態
-予約済状態 --> 空室状態
-空室状態 --> 使用状態
-使用状態 --> 空室状態
-空室状態 --> exit
+' left to right direction
+state 未使用{
+空室 -right-> 予約済 : 予約
+空室 <-- 予約済 : キャンセル
 }
-[*] --> entry
-exit -> [*]
+使用中 --> 空室 : 使用終了
+予約済 --> 使用中 : 使用
+
 @enduml
 ' 部屋オブジェクトには、空室状態と、予約済状態、使用状態がある。各状態のイベントや状態の入れ子を
 ' について考察し、部屋オブジェクトのステートマシン図を作成しなさい。

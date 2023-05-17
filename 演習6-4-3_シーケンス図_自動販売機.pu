@@ -1,0 +1,21 @@
+@startuml
+hide footbox
+participant "<u>:客</u>" as user
+participant "<u>:料金装置</u>" as money
+participant "<u>:ボタン</u>" as button
+participant "<u>:ベンダー装置</u>" as benda
+
+activate user
+    activate money
+        user -> money : お金を入れる
+        user <- money : 料金を表示する
+    deactivate money
+        user -> button : ボタンを押す
+        activate button
+            button -> benda : 選択したドリンクを伝える
+            activate benda
+            ' deactivate benda
+    deactivate button
+            user <<-- benda : ドリンクを渡す
+
+@enduml

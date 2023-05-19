@@ -1,0 +1,12 @@
+@startuml
+' left to right direction
+state 電源SW_ON{
+    右旋回 -right-> 左旋回 : 明るい
+    右旋回 <-- 左旋回 : 暗い
+}
+電源SW_ON --> 電源SW_OFF
+電源SW_ON <-- 電源SW_OFF
+
+
+
+@enduml

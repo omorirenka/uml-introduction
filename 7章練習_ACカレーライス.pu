@@ -1,0 +1,18 @@
+@startuml
+
+start
+fork
+    :野菜を切る;
+    fork
+        :肉を切る;
+    fork again
+    :野菜を鍋で煮る;
+    end fork
+    :肉を鍋に入れて煮る;
+    :火を止めてルーを入れる;
+fork again
+    :米を炊く;
+end fork
+:盛り付ける;
+stop
+@enduml
